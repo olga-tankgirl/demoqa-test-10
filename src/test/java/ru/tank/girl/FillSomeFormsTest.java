@@ -12,8 +12,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class FillSomeFormsTest {
 
         @BeforeAll
-        static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
+        static void beforeAll() {Configuration.browserSize = "1440x900";
         }
 
         @Test
