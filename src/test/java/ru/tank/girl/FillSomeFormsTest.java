@@ -23,11 +23,11 @@ public class FillSomeFormsTest {
         $("#userEmail").setValue("testmail@mail.ru");
         $(".custom-radio:nth-child(1) .custom-control-label").click();
         $("#userNumber").setValue("3322332233");
-        $("#dateOfBirthInput").click();
+        $("#dateOfBirthInput").scrollTo().click();
         $("[class*='month-select']").selectOption("March");
         $("[class*='year-select']").selectOption("2000");
         $("[class*='day--031']").click();
-        $("#uploadPicture").uploadFile(new File("1.jpg"));
+        $("#uploadPicture").uploadFile(new File("src/test/resoures/1.jpg"));
         $("#subjectsInput").setValue("Biology").pressEnter();
         $(".custom-checkbox:nth-child(1) .custom-control-label").click();
         $("#currentAddress").setValue("Testaddress");
