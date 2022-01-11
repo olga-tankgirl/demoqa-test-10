@@ -1,9 +1,11 @@
-package ru.tank.girl;
+package girl.tank;
 
 public class Main {
     public static void main(String[] args) {
 
         Food food = new Food();
+
+        System.out.println("         + + + + + + + + + + + + ");
 
         Bird kurica = new Bird();
         kurica.vid = "hen";
@@ -32,6 +34,8 @@ public class Main {
         human.golubinost = true;
         human.behavior();
         food.eats(human.kurinost, human.golubinost);
+
+        System.out.println("          + + + + + + + + + + + + ");
 
     }
 }

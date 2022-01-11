@@ -1,4 +1,4 @@
-package ru.tank.girl;
+package girl.tank;
 
 public class Bird {
     String vid;
