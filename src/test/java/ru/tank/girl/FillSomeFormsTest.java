@@ -3,6 +3,7 @@ package ru.tank.girl;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
@@ -11,12 +12,13 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class FillSomeFormsTest {
 
-        @BeforeAll
-        static void beforeAll() {Configuration.browserSize = "1440x900";
-        }
+    @BeforeAll
+    static void beforeAll() {
+        Configuration.browserSize = "1440x900";
+    }
 
-        @Test
-        void fillForm() {
+    @Test
+    void fillForm() {
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue("Testname");
         $("#lastName").setValue("Testlastname");
@@ -45,5 +47,5 @@ public class FillSomeFormsTest {
                 text("1.jpg"),
                 text("Testaddress"),
                 text("Rajasthan Jaipur"));
-        }
-        }
+    }
+}
