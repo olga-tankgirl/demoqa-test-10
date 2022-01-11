@@ -28,12 +28,12 @@ public class Main {
         toucan.behavior();
         food.eats(toucan.kurinost, toucan.golubinost);
 
-        Bird human = new Bird();
-        human.vid = "human";
-        human.kurinost = true;
-        human.golubinost = true;
-        human.behavior();
-        food.eats(human.kurinost, human.golubinost);
+        Bird parrot = new Bird();
+        parrot.vid = "parrot";
+        parrot.kurinost = true;
+        parrot.golubinost = true;
+        parrot.behavior();
+        food.eats(parrot.kurinost, parrot.golubinost);
 
         System.out.println("          + + + + + + + + + + + + ");
 
