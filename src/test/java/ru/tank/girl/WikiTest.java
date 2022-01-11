@@ -9,22 +9,14 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class WikiTest {
-@Test
-void wiki () {
+    @Test
+    void wiki() {
 
-    open("https://github.com/selenide/selenide");
-    $("#wiki-tab").click();
-    $(".js-wiki-more-pages-link").click();
-    $("#wiki-pages-box").shouldHave(text("SoftAssertions"));
-    $("#wiki-pages-box").$(byText("SoftAssertions")).click();
-    $("#wiki-body").shouldHave(text("Using JUnit5 extend test class"));
-}
-
-
-
-
-
-
-
-
+        open("https://github.com/selenide/selenide");
+        $("#wiki-tab").click();
+        $(".js-wiki-more-pages-link").click();
+        $("#wiki-pages-box").shouldHave(text("SoftAssertions"));
+        $("#wiki-pages-box").$(byText("SoftAssertions")).click();
+        $("#wiki-body").shouldHave(text("Using JUnit5 extend test class"));
+    }
 }
