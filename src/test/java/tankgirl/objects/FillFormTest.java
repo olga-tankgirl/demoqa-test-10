@@ -19,38 +19,14 @@ public class FillFormTest {
     }
 
     @Test
-    @DisplayName("Form filling in web-application")
+    @DisplayName("Tank is an object of war")
     void fillForm() {
-        Objects objects = new Objects();
-
-        open("https://demoqa.com/automation-practice-form");
-        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
-
-        $("#firstName").setValue(objects.firstName);
-        $("#lastName").setValue(objects.lastName);
-        $("#userEmail").setValue(objects.email);
-        $(".custom-radio:nth-child(1) .custom-control-label").click();
-        $("#userNumber").setValue(objects.phone);
-
-        $("#uploadPicture").uploadFile(new File("src/test/resoures/1.jpg"));
-        $("#subjectsInput").setValue("Biology").pressEnter();
-        $(".custom-checkbox:nth-child(1) .custom-control-label").click();
-        $("#currentAddress").setValue(objects.address);
-        $("#react-select-3-input").setValue("Rajasthan").pressEnter();
-        $("#react-select-4-input").setValue("Jaipur").pressEnter();
-        $("#submit").scrollTo().click();
-        objects.inputDate("31","March","2000");
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".modal-content").shouldHave(
-                text(objects.firstName + " " + objects.lastName),
-                text(objects.email),
-                text("Male"),
-                text(objects.phone),
-                text("31 March,2000"),
-                text("Biology"),
-                text("Sports"),
-                text("1.jpg"),
-                text(objects.address),
-                text("Rajasthan Jaipur"));
+        new Objects().openTestPage("https://demoqa.com/automation-practice-form")
+        .inputPersonalData()
+        .inputContacts()
+        .inputSchoolStuff()
+        .inputDate("31","March","2000")
+        .submitForm()
+        .assertForm();
     }
 }
