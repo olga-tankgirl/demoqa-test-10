@@ -26,7 +26,7 @@ public class Objects {
         $("#dateOfBirthInput").scrollTo().click();
         $("[class*='month-select']").selectOption(m);
         $("[class*='year-select']").selectOption(y);
-        $("[class*='day--031']").click();
+        $("[class*='day--0"+d+"']").click();
         return this;
     }
 
