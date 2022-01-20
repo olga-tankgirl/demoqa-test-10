@@ -24,6 +24,8 @@ public class FillFormTest {
         Objects objects = new Objects();
 
         open("https://demoqa.com/automation-practice-form");
+        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+
         $("#firstName").setValue(objects.firstName);
         $("#lastName").setValue(objects.lastName);
         $("#userEmail").setValue(objects.email);
