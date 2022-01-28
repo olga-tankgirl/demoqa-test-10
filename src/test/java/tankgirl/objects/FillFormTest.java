@@ -20,7 +20,7 @@ public class FillFormTest {
     void fillForm() {
         FakerData fakerData = new FakerData();
         new PractiveFormPage().openTestPage("https://demoqa.com/automation-practice-form")
-                .inputPersonalData(fakerData.firstName, fakerData.lastName, "Male", "src/test/resoures/1.jpg")
+                .inputPersonalData(fakerData.firstName, fakerData.lastName, "Male", "src/test/resources/1.jpg")
                 .inputContacts(fakerData.email, fakerData.phone, fakerData.address, "Rajasthan", "Jaipur")
                 .inputSchoolStuff("Biology", "1")
                 .inputDate("31", "March", "2000")
