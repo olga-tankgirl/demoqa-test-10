@@ -56,29 +56,13 @@ public class PractiveFormPage {
         return this;
     }
 
-    public void assertForm(String firstName,
-                           String lastName,
-                           String email,
-                           String gender,
-                           String phone,
-                           String date,
-                           String subject,
-                           String hobby,
-                           String photo,
-                           String address,
-                           String state,
-                           String city) {
+    public PractiveFormPage assertFormSubmitted() {
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".modal-content").shouldHave(
-                text(firstName + " " + lastName),
-                text(email),
-                text(gender),
-                text(phone),
-                text(date),
-                text(subject),
-                text(hobby),
-                text(photo),
-                text(address),
-                text(state + " " + city));
+        return this;
+    }
+
+    public PractiveFormPage assertForm(String ass) {
+        $(".modal-content").shouldHave(text(ass));
+        return this;
     }
 }

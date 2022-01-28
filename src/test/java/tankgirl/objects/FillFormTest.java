@@ -5,8 +5,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+//import static com.codeborne.selenide.Selenide.$;
+//import static com.codeborne.selenide.Selenide.open;
 
 public class FillFormTest {
 
@@ -20,22 +20,21 @@ public class FillFormTest {
     void fillForm() {
         FakerData fakerData = new FakerData();
         new PractiveFormPage().openTestPage("https://demoqa.com/automation-practice-form")
-        .inputPersonalData(fakerData.firstName, fakerData.lastName, "Male","src/test/resoures/1.jpg")
-        .inputContacts(fakerData.email, fakerData.phone, fakerData.address, "Rajasthan", "Jaipur")
-        .inputSchoolStuff("Biology", "1")
-        .inputDate("31","March","2000")
-        .submitForm()
-        .assertForm(fakerData.firstName,
-                fakerData.lastName,
-                fakerData.email,
-                "Male",
-                fakerData.phone,
-                "31 March,2000",
-                "Biology",
-                "Sports",
-                "1.jpg",
-                fakerData.address,
-                "Rajasthan",
-                "Jaipur");
+                .inputPersonalData(fakerData.firstName, fakerData.lastName, "Male", "src/test/resoures/1.jpg")
+                .inputContacts(fakerData.email, fakerData.phone, fakerData.address, "Rajasthan", "Jaipur")
+                .inputSchoolStuff("Biology", "1")
+                .inputDate("31", "March", "2000")
+                .submitForm()
+                .assertFormSubmitted()
+                .assertForm(fakerData.firstName + " " + fakerData.lastName)
+                .assertForm(fakerData.email)
+                .assertForm("Male")
+                .assertForm(fakerData.phone)
+                .assertForm("31 March,2000")
+                .assertForm("Biology")
+                .assertForm("Sports")
+                .assertForm("1.jpg")
+                .assertForm(fakerData.address)
+                .assertForm("Rajasthan Jaipur");
     }
 }
