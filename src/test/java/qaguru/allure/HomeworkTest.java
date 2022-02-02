@@ -3,9 +3,10 @@ package qaguru.allure;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.Attachment;
+import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -34,6 +35,9 @@ public class HomeworkTest {
     }
 
     @Test
+    @Owner("Me")
+    @Story("Современный подход")
+    @Severity(SeverityLevel.BLOCKER)
     public void cleanSelenideTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         open(URL);
@@ -47,6 +51,9 @@ public class HomeworkTest {
     }
 
     @Test
+    @Owner("Me")
+    @Story("Ручное объявление шагов")
+    @Severity(SeverityLevel.CRITICAL)
     public void lambdaStepTest() {
         step("открывание главной страницы гитхаба", () -> open(URL));
         step("искание искомого репо " + REPO, () -> {
@@ -62,6 +69,9 @@ public class HomeworkTest {
     }
 
     @Test
+    @Owner("Me")
+    @Story("Вынос шагов в отдельный класс")
+    @Severity(SeverityLevel.MINOR)
     public void annotatedStepsTest() {
         WebSteps steps = new WebSteps();
         steps.openPage();
