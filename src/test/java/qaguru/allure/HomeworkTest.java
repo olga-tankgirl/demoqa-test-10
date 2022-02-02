@@ -48,21 +48,15 @@ public class HomeworkTest {
 
     @Test
     public void lambdaStepTest() {
-        step("откр глав стр", () -> {
-            open(URL);
-        });
-        step("ищем репо " + REPO, () -> {
+        step("открывание главной страницы гитхаба", () -> open(URL));
+        step("искание искомого репо " + REPO, () -> {
             $(".header-search-input").click();
             $(".header-search-input").sendKeys(REPO);
             $(".header-search-input").submit();
         });
-        step("перех в репо " + REPO, () -> {
-            $(By.linkText(REPO)).click();
-        });
-        step("откр таб Issues", () -> {
-            $(By.partialLinkText(ISSUE)).click();
-        });
-        step("пров Issue номер " + NUM, () -> {
+        step("переход в искомый репо " + REPO, () -> $(By.linkText(REPO)).click());
+        step("открывание таба с жалобами", () -> $(By.partialLinkText(ISSUE)).click());
+        step("проверяние жалобы с номером " + NUM, () -> {
             $(withText("#" + NUM)).should(Condition.visible);
         });
     }
